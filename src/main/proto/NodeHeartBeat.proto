@@ -1,0 +1,10 @@
+syntax = "proto3";
+package org.poc.cache.server.proto;
+message NodeHeartBeat {
+  string heartBeatSource=1;
+  repeated string liveNodes =2; // List of live nodes
+  int32 heartBeatSequence =3;
+  int64 heartBeatStartTime =4;
+
+}
+

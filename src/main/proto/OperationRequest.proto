@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "src/main/proto/OperationRequestType.proto";
+package org.poc.cache.server.proto;
+
+
+message OperationRequest{
+  OperationRequestType operationRequestType=1;
+  int32 storageName =2;
+  optional string key =3;
+  optional bytes values =4;
+  string requestId=5;
+}

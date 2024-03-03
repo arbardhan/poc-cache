@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.poc.cache'
+
+application {
+    /*applicationDefaultJvmArgs  = [' -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 ' +
+            '-Dcom.sun.management.jmxremote.rmi.port=2222 ' +
+            '-Dcom.sun.management.jmxremote.local.only=false ' +
+            '-Dcom.sun.management.jmxremote.authenticate=false ' +
+            '-Dcom.sun.management.jmxremote.ssl=false']
+
+     */
+
+    mainClass = 'org.poc.cache.server.MainClass'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'org.junit.platform:junit-platform-console-standalone:1.9.2'
+    implementation 'com.google.protobuf:protobuf-java:3.24.0'
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.13'
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    implementation 'org.springframework:spring-core:5.3.31'
+    implementation 'org.springframework:spring-context:5.3.31'
+    implementation 'org.springframework.boot:spring-boot:2.7.18'
+    implementation 'ch.qos.logback:logback-classic:1.2.12'
+    implementation 'com.google.guava:guava:32.1.3-jre'
+
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.18'
+    implementation 'net.jodah:expiringmap:0.5.10'
+    testImplementation 'net.jodah:expiringmap:0.5.10'
+    testImplementation 'com.google.guava:guava:32.1.3-jre'
+
+}
+
+test {
+    useJUnitPlatform()
+}

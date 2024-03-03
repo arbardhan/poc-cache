@@ -1,0 +1,9 @@
+syntax = "proto3";
+package org.poc.cache.server.proto;
+enum OperationRequestType{
+  FETCH = 0; // ALL SIMPLE GET REQUESTS , COUNT ETC
+  ALTER =1; // ALL Requests THAT MODIFY THE MAP - PUT , CLEAR
+  CLEAR = 2; // WILL CLEAR THE MAP
+  EXISTS = 3; // WILL CHECK IF KEY EXISTS IN A MAP
+  DISTRIBUTION =4; // WHEN DATA IS MOVED ACROSS PARTITIONS
+}

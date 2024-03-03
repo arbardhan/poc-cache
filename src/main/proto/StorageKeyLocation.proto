@@ -1,0 +1,8 @@
+syntax = "proto3";
+package org.poc.cache.server.proto;
+
+message StorageKeyLocation{
+  string key=1; // All keys are stored in Storage as Byte Arrays.However to make local caching of key easier - each object will have a StringiField Key which will be hashed
+  string node=2; // Node that currently holds this key
+  // [INT32-MESSAGE LENGTH][STORAGE_KEY_AS_BYTE_ARRAY]
+}

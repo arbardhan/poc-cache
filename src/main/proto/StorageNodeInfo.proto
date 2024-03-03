@@ -1,0 +1,11 @@
+syntax = "proto3";
+package org.poc.cache.server.proto;
+
+message StorageNodeInfo{
+  string nodeAddress=1 ; // address of the node from where this message originated
+  int64 nodeUptimeUTC = 2; // Unix EPOC of how long this node has been up
+  int32 sequenceNumber = 3; // An increasing sequence incrementing when a new message is sent - resets to 0 on restart of the node
+  int32 indexPosition = 4; // Position on the consistent hashing ring space generated using Murmur hash -- hash space = 1024
+}
+
+// Message format [INT32 4 BYTE MESSAGE LENGTH][BYTE ARRAY OF ACTUAL MESSAGE]
